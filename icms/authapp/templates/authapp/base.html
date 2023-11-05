@@ -1,0 +1,18 @@
+<nav>
+    <ul>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'cultures' %}">Cultures</a></li>
+            <li><a href="{% url 'history' %}">History</a></li>
+            <li><a href="{% url 'festivals' %}">Festivals</a></li>
+            <li><a href="{% url 'food' %}">Food</a></li>
+            <li><a href="{% url 'food1' %}">Food</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+
+        </ul>
+    </nav>
+    <a href="{% url 'nav_buttons' %}">Navigation Buttons</a>
+{% else %}
+    <a href="{% url 'welcome' %}">Welcome</a>
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+</nav>

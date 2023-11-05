@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="success-message">Registered successfully</div>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the form submission (for demonstration purposes)
+
+            // Simulate a successful registration (you should replace this with your actual registration logic)
+            const registrationSuccessful = true;
+
+            if (registrationSuccessful) {
+                form.style.display = 'none'; // Hide the form
+                successMessage.style.display = 'block'; // Show the success message
+
+                // Redirect to the "nav_buttons" page after a delay (e.g., 3 seconds)
+                setTimeout(() => {
+                    window.location.href = 'nav_buttons'; // Replace with the actual URL of your "nav_buttons" page
+                }, 3000); // 3000 milliseconds = 3 seconds
+            }
+        });
+    </script>
+</body>
+</html>

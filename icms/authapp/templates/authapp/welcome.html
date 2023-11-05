@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            background-image: url('https://wallpapercave.com/dwp1x/wp5324416.jpg');
+            background-size: 68%; /* Decrease image size to 50% */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .center {
+            text-align: center;
+            padding: 20% 0;
+        }
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+            margin: 10px;
+        }
+        .btn-danger {
+            background-color: #ff0000;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="center">
+        <h1>Indian Culture Management System</h1>
+        <h2>Getting started..</h2>
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+
+    </div>
+</body>
+</html>

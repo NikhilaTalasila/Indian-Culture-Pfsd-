@@ -1,0 +1,76 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>List of Cities</title>-->
+<!--    <style>-->
+<!--        .city-container {-->
+<!--            display: flex;-->
+<!--            flex-wrap: wrap;-->
+<!--            justify-content: space-around;-->
+<!--        }-->
+
+<!--        .city-card {-->
+<!--            margin: 10px;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>List of Cities</h1>-->
+<!--    <div class="city-container">-->
+<!--        {% for city in cities %}-->
+<!--            <div class="city-card">-->
+<!--                <a href="{{ city.external_url }}">-->
+<!--                    <img src="{{ city.image_url }}" alt="{{ city.name }} Image">-->
+<!--                </a>-->
+<!--                <p><a href="{{ city.external_url }}">{{ city.name }}</a></p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .city-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .city-card {
+            flex: 0 0 calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        .city-card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/bokeh-defocused-background_23-2148497833.jpg'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+            background-size: cover; /* This property controls how the image is sized in relation to the element's box */
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Cities</h1>
+    <div class="city-container">
+        {% for city in cities %}
+            <div class="city-card">
+                <a href="{{ city.external_url }}">
+                    <img src="{{ city.image_url }}" alt="{{ city.name }} Image">
+                </a>
+                <p><a href="{{ city.external_url }}">{{ city.name }}</a></p>
+            </div>
+
+        {% endfor %}
+
+    </div>
+</body>
+</html>

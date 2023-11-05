@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Buttons</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYho3SIdkdjGh6ZGvI4GxrqeLge3Q-LsGdXelJMPbGzmWbOqWJjo0FDWUsoPx4NqaEfjQ&usqp=CAU'); /* Updated background image URL */
+            background-size: 50%; /* Reduce image size to half */
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: #333; /* Text color for the heading */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        li {
+            display: inline;
+            margin: 10px 20px;
+        }
+
+        .first-button {
+            margin-left: 150px; /* Add more margin to the right of the first button */
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3; /* Button background color on hover */
+        }
+
+         p.mt-3 {
+            position: absolute;
+            top: 0px; /* Adjust the top position as needed */
+            right: 10px; /* Adjust the right position as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Category</h1>
+    <ul>
+        <li class="first-button"><a href="{% url 'culture_list' %}">Cultures</a></li>
+        <li><a href="{% url 'city_list' %}">Historical Cities</a></li>
+        <li><a href="{% url 'category_list' %}">Food</a></li>
+        <li><a href="{% url 'food_list' %}">Food Details</a></li>
+        <p class="mt-3"><a href="{% url 'logout' %}" class="btn btn-danger">Logout</a></p>
+    </ul>
+</body>
+</html>

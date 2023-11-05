@@ -1,0 +1,150 @@
+<!--&lt;!&ndash; food_app/templates/food_app/food_list.html &ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Food List</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+
+<!--        h1 {-->
+<!--            text-align: center;-->
+<!--            color: #333;-->
+<!--        }-->
+
+<!--        table {-->
+<!--            width: 80%;-->
+<!--            margin: 20px auto;-->
+<!--            border-collapse: collapse;-->
+<!--            background-color: #fff;-->
+<!--        }-->
+
+<!--        th, td {-->
+<!--            border: 1px solid #ddd;-->
+<!--            padding: 8px;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        th {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+
+<!--        tr:nth-child(even) {-->
+<!--            background-color: #f2f2f2;-->
+<!--        }-->
+
+<!--        tr:nth-child(odd) {-->
+<!--            background-color: #fff;-->
+<!--        }-->
+
+<!--        th, td {-->
+<!--            font-weight: bold;-->
+<!--        }-->
+
+<!--        td:nth-child(1), td:nth-child(2) {-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Food List</h1>-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>State</th>-->
+<!--            <th>Famous Foods</th>-->
+<!--            <th>Average Price</th>-->
+<!--        </tr>-->
+<!--        {% for food_item in food_items %}-->
+<!--            <tr>-->
+<!--                <td>{{ food_item.state }}</td>-->
+<!--                <td>{{ food_item.famous_foods }}</td>-->
+<!--                <td>₹{{ food_item.average_price }}</td>-->
+<!--            </tr>-->
+<!--        {% endfor %}-->
+<!--    </table>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!-- food_app/templates/food_app/food_list.html -->
+<!-- food_app/templates/food_app/food_list.html -->
+<!-- food_app/templates/food_app/food_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px; /* Increase the padding to add more spacing */
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        th, td {
+            font-weight: bold;
+        }
+
+        td:nth-child(1), td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Food List</h1>
+    <table>
+        <tr>
+            <th>State</th>
+            <th>Famous Foods</th>
+            <th>Average Price</th>
+            <th>Image</th>
+        </tr>
+        {% for food_item in food_items %}
+            <tr>
+                <td>{{ food_item.state }}</td>
+                <td>{{ food_item.famous_foods }}</td>
+                <td>₹{{ food_item.average_price }}</td>
+                <td>
+                    <!-- Display the image with 80x80 dimensions using the image URL from the FoodItem instance -->
+                    <img src="{{ food_item.image_url }}" alt="{{ food_item.state }} Image" width="80" height="80">
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

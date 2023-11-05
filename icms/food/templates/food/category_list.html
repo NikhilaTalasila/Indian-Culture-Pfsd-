@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category List</title>
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-block {
+            flex: 0 0 30%; /* Adjust the width of each block as needed */
+            margin: 10px;
+            text-align: center;
+        }
+        .image-block img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/bokeh-defocused-background_23-2148497833.jpg'); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+            background-size: cover; /* This property controls how the image is sized in relation to the element's box */
+        }
+    </style>
+</head>
+<body>
+    <h1>Categories</h1>
+    <div class="image-container">
+        {% for category in categories %}
+            <div class="image-block">
+                <a href="{% if category.subcategories.exists %}{% url 'category_list' category.id %}{% else %}{{ category.external_url }}{% endif %}">
+                    {% if category.image_url %}
+                        <img src="{{ category.image_url }}" alt="{{ category.name }} Image">
+                    {% endif %}
+                    {{ category.name }}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
